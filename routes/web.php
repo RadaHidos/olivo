@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
+
+Route::get('articles', [App\Http\Controllers\ArticleController::class, 'index'])->name('article.index');
+Route::get('articles/{article}', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+
 
 
 Route::get('/dashboard', function () {

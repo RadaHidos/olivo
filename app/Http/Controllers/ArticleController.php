@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class ArticleController extends Controller
+{
+    function index()
+    {
+        return view('articles.index');
+    }
+
+    function show($article)
+    {
+        return view('articles.show', compact('article'));
+    }
+    //
+}
