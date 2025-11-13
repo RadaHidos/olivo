@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -13,9 +14,11 @@ class ArticleController extends Controller
         return view('articles.index', compact('articles'));
     }
 
-    function show($article)
+    function show(int $id)
     {
-        return view('articles.show', compact('articles'));
+
+        $article = Article::find($id);
+        return view('articles.show', compact('article'));
     }
     //
 }

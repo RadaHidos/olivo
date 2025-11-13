@@ -1,11 +1,10 @@
 <x-site-layout title="Articles oveview">
 
     @foreach($articles as $article)
-    <div class="mb-2 border-t border-gray-500">
+    <a href="/articles/{{$article->id}}" class="mb-2 border-t border-gray-500">
         <h2 class="font-bold text-xl">{{$article->title}}</h2>
         <p>{{$article->content}}</p>
-    </div>
-
+    </a>
     @endforeach
 
 
