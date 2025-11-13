@@ -8,12 +8,14 @@ class ArticleController extends Controller
 {
     function index()
     {
-        return view('articles.index');
+        $articles = \App\Models\Article::all();
+
+        return view('articles.index', compact('articles'));
     }
 
     function show($article)
     {
-        return view('articles.show', compact('article'));
+        return view('articles.show', compact('articles'));
     }
     //
 }
