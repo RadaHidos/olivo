@@ -11,6 +11,12 @@ class Article extends Model
     use HasFactory;
 
     //model relations
+    public function author()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
     public function comments()
     {
         return $this->hasMany(Comment::class);

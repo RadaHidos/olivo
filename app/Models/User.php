@@ -45,4 +45,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //Model relations-------
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
